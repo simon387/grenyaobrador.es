@@ -1,4 +1,4 @@
 <?php
 session_start();
 session_destroy();
-header("Location:/almacen/fe/index.php");
+header("Location:/grenyaobrador.es/almacen/fe/index.php");

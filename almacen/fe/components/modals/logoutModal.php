@@ -10,7 +10,7 @@
 			<div class="modal-body">Seleccione "Cerrar sesión" si está listo para finalizar su sesión actual.</div>
 			<div class="modal-footer">
 				<button class="btn btn-secondary" type="button" data-dismiss="modal">Anular</button>
-				<a class="btn btn-primary" href="/almacen/fe/components/pages/logout.php">Cerrar sesión</a>
+				<a class="btn btn-primary" href="/grenyaobrador.es/almacen/fe/components/pages/logout.php">Cerrar sesión</a>
 			</div>
 		</div>
 	</div>
