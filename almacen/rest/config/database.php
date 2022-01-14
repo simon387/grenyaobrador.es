@@ -10,7 +10,7 @@ class Database
 	{
 		$this->conn = null;
 		try {
-			$this->conn = new PDO("mysql:host=" . Config::$host . ";dbname=" . Config::$db_name, Config::$username, Config::$password);
+			$this->conn = new PDO("mysql:host=" . Config::$db_host . ";dbname=" . Config::$db_name, Config::$db_username, Config::$db_password);
 			$this->conn->exec("set names utf8");
 			$this->conn->exec("SET GLOBAL time_zone='Europe/Madrid");
 		} catch (PDOException $exception) {
