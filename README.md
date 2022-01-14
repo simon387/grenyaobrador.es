@@ -16,13 +16,14 @@ class Config
 	static $db_name = 'grenyaobrador';
 	static $db_username  = 'root';
 	static $db_password  = 'root';
+	static $db_statement_0 = '';
 }
 ```
 ### Database's diagram
 ![image info](./almacen.png)
 ### Local
 + host: localhost
-+ name: almacen
++ name: grenyaobrador
 + user: root
 + password: root
 

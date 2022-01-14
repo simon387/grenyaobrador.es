@@ -72,8 +72,8 @@ CREATE TABLE supplier
 );
 -- defaults
 INSERT INTO supplier (id, name) VALUES (1, 'sin proovedor');
-INSERT INTO supplier (id, name) VALUES (2, 'provedor#1');
-INSERT INTO supplier (id, name) VALUES (3, 'provedor#2');
+INSERT INTO supplier (id, name) VALUES (2, 'proveedor#1');
+INSERT INTO supplier (id, name) VALUES (3, 'proveedor#2');
 
 
 

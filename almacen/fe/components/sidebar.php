@@ -1,7 +1,10 @@
+<?php
+$bsUrl = "$_SERVER[HTTP_HOST]" === "localhost" ? "grenyaobrador.es" : "";
+?>
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" style="display: none">
 
 	<!-- Sidebar - Brand -->
-	<a class="sidebar-brand d-flex align-items-center justify-content-center" href="/almacen/fe/index.php">
+	<a class="sidebar-brand d-flex align-items-center justify-content-center" href="/<?=$bsUrl?>/almacen/fe/index.php">
 		<div class="sidebar-brand-icon rotate-n-15">
 			<em class="fas fa-laugh-wink"></em>
 		</div>
