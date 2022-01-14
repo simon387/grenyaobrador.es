@@ -30,3 +30,4 @@ class Config
 ## links
 + https://www.facebook.com/forngil/
 + https://www.instagram.com/grenyaobrador/
++ https://hpanel.hostinger.com

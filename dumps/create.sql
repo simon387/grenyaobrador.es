@@ -11,8 +11,8 @@ create table role_
     constraint role__name_uindex unique (name)
 );
 -- insert default roles
-INSERT INTO role_ (name, id) VALUES ('admin', 1);
-INSERT INTO role_ (name, id) VALUES ('tati', 2);
+INSERT INTO role_ (name) VALUES ('admin');
+INSERT INTO role_ (name) VALUES ('super-admin');
 
 
 
@@ -29,8 +29,8 @@ create table user_
     constraint user__role__id_fk foreign key (role) references role_ (id)
 );
 -- insert default users
-INSERT INTO user_ (email, name, pass, role) VALUES ('tati@grenyaobrador.es', 'Tatiana Correa', 'pass', 2);
-INSERT INTO user_ (email, name, pass, role) VALUES ('simone.celia@simonecelia.it', 'Simone Celia', '', 1);
+INSERT INTO user_ (email, name, pass, role) VALUES ('tati@grenyaobrador.es', 'Tatiana Correa', 'pass', 1); -- admin
+INSERT INTO user_ (email, name, pass, role) VALUES ('simone.celia@simonecelia.it', 'Simone Celia', '', 3); -- super-admin
 
 
 
