@@ -11,4 +11,4 @@ create table role_
 );
 -- insert default roles
 INSERT INTO role_ (name, id) VALUES ('admin', 1);
-
+INSERT INTO role_ (name, id) VALUES ('tati', 2);
