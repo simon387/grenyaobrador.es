@@ -1,0 +1,48 @@
+.bg-login-image {
+    background: url("../img/login-placa.jpg") center;
+    background-size: cover;
+}
+
+#main-paginator {
+    overflow: auto;
+}
+
+#dataTableDashboard_paginate {
+    float: right;
+}
+
+#dataTableDashboard_filter {
+    float: right;
+}
+
+#dataTableLogs_paginate {
+    float: right;
+}
+
+#dataTableLogs_filter {
+    float: right;
+}
+
+#dataTablePeriods_paginate {
+    float: right;
+}
+
+#dataTablePeriods_filter {
+    float: right;
+}
+
+#dataTableSuppliers_paginate {
+    float: right;
+}
+
+#dataTableSuppliers_filter {
+    float: right;
+}
+
+#dataTableProducts_paginate {
+    float: right;
+}
+
+#dataTableProducts_filter {
+    float: right;
+}
