@@ -2,9 +2,9 @@
 	<meta charset="utf-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-	<meta name="keywords" content=""/>
-	<meta name="description" content=""/>
-	<meta name="author" content=""/>
+	<meta name="keywords" content="<?= TITLE ?>, grenya"/>
+	<meta name="description" content="Grenyaobrador official site"/>
+	<meta name="author" content="<?= SC_EMAIL ?>"/>
 	<link rel="shortcut icon" href="images/favicon.png" type="">
 	<title> <?= TITLE ?> </title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
