@@ -93,7 +93,7 @@ create table product
     outflow0 decimal(9, 2) null,
     outflow1 decimal(9, 2) null,
     `left`   decimal(9, 2) null,
-    period int null,
+    `period` int null,
     note     varchar(255)  null,
     constraint product_category_id_fk
         foreign key (category) references category (id),
