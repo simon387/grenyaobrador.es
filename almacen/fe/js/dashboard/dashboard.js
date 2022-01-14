@@ -201,7 +201,6 @@ function getDatatableDataBySupplierAndPeriod(supplierID, periodID) {
 function renderTableDashboard(dataTable, data, isFromSearch = false) {
 	dataTable.clear();
 	const array = isFromSearch ? data.list : JSON.parse(data).list;
-	debugger
 	const disabledDeposit = user["role"] === "admin" || user["role"] === "super-admin" ? "" : "disabled";
 	const disabledOf0 = user["role"] === "comarea" ? "disabled" : "";
 	const disabledOf1 = user["role"] === "placa" ? "disabled" : "";

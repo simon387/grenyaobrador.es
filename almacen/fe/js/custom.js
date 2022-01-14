@@ -1,5 +1,5 @@
 const contextPath = "/almacen/fe";
-const rest = "/almacen/rest/";
+const rest = "/grenyaobrador.es/almacen/rest/";
 
 $(document).ready(function () {
 	$("#sidebarToggleTop-custom").on("click", function () {

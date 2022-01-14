@@ -52,7 +52,7 @@ function ko($form)
 	exit;
 }
 
-function current_url($script_only = false)
+function current_url($script_only = false): string
 {
 	$protocol = 'http';
 	if (isset($_SERVER["HTTPS"]) == 'on') {
