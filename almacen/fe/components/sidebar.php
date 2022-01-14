@@ -13,7 +13,7 @@
 
 	<!-- Nav Item - Dashboard -->
 	<li class="nav-item">
-		<a class="nav-link" href="/almacen/fe/index.php">
+		<a class="nav-link" href="/grenyaobrador.es/almacen/fe/index.php">
 			<em class="fas fa-fw fa-tachometer-alt"></em>
 			<span>Dashboard</span></a>
 	</li>
@@ -27,7 +27,7 @@
 	</div>
 
 	<li class="nav-item">
-		<a class="nav-link" href="/almacen/fe/components/pages/logs.php">
+		<a class="nav-link" href="/grenyaobrador.es/almacen/fe/components/pages/logs.php">
 			<em class="fas fa-fw fa-chart-area"></em>
 			<span>Operaciones</span></a>
 	</li>
