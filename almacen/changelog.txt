@@ -1,0 +1,55 @@
+Version 1.3.8
+- added license
+
+Version 1.3.7
+- added href to footer
+
+Version 1.3.6
+- fixed footer
+
+Version 1.3.5
+- added compression to CI
+
+Version 1.3.4
+- Just removed index template page
+
+Version 1.3.4
+- Go open source
+
+Version 1.3.3
+- Typo
+- rm .run dir (localhost deploy util?)
+
+Version 1.3.2
+- Added CI
+
+Version 1.3.1
+- Typos in labels
+- Fix new-period in/out
+- Fix super-admin role in dashboard
+
+Version 1.3.0
+- Added super-admin role
+- Added delete period to Operation table logs
+- Fix Footer
+
+Version 1.2.2
+- Fix desktop view
+
+Version 1.2.1
+
+- Fix mobile view
+Version 1.2.0
+- Read password from DB and more security
+- GUI more understandable
+
+Version 1.1.1
+- Fix bug operation get all list
+- Supplier Page
+- Period page
+- 404 fix
+- General Search Engine
+- Users with differents roles
+- Graphic update
+
+Version 1.0.0
