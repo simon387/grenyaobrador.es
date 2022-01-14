@@ -1,5 +1,6 @@
 const contextPath = "/almacen/fe";
-const rest = "/grenyaobrador.es/almacen/rest/";
+const pre = window.location.hostname === 'www.grenyaobrador.es' ? "" : "/grenyaobrador.es";
+const rest = pre + "/almacen/rest/";
 
 $(document).ready(function () {
 	$("#sidebarToggleTop-custom").on("click", function () {
