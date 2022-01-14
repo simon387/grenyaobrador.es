@@ -13,7 +13,7 @@ mariadb / mysql
 class Config
 {
 	static $db_host = 'localhost';
-	static $db_name = 'simonecelia';
+	static $db_name = 'grenyaobrador';
 	static $db_username  = 'root';
 	static $db_password  = 'root';
 }
@@ -25,3 +25,7 @@ class Config
 + name: almacen
 + user: root
 + password: root
+
+## links
++ https://www.facebook.com/forngil/
++ https://www.instagram.com/grenyaobrador/
