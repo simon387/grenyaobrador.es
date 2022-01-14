@@ -1,22 +1,21 @@
 <?php
 require_once '../../../rest/config/protect.php';
 with('components/pages/login.php', "scope");
+$bs = ( in_array( $_SERVER['REMOTE_ADDR'], array( '127.0.0.1', '::1' ) ) ) ? "localhost/" : "";
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
 	<?php include "../head.title.php"; ?>
-	<!-- Custom fonts for this template-->
-	<link href="/almacen/fe/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+	<link href="//<?= $bs ?>grenyaobrador.es/almacen/fe/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 	<link
 		href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
 		rel="stylesheet">
-	<!-- Custom styles for this template-->
-	<link href="/almacen/fe/css/sb-admin-2.min.css" rel="stylesheet">
-	<link href="/almacen/fe/css/spinner-overlay.css" rel="stylesheet">
-	<link href="/almacen/fe/css/custom.css" rel="stylesheet">
-	<link rel="shortcut icon" href="/almacen/fe/img/warehouse_122331.ico"/>
+	<link href="//<?= $bs ?>grenyaobrador.es/almacen/fe/css/sb-admin-2.min.css" rel="stylesheet">
+	<link href="//<?= $bs ?>grenyaobrador.es/almacen/fe/css/spinner-overlay.css" rel="stylesheet">
+	<link href="//<?= $bs ?>grenyaobrador.es/almacen/fe/css/custom.css" rel="stylesheet">
+	<link href="//<?= $bs ?>grenyaobrador.es/almacen/fe/img/warehouse_122331.ico" rel="shortcut icon" />
 </head>
 
 <body id="page-top">
@@ -48,25 +47,14 @@ with('components/pages/login.php', "scope");
 </a>
 
 <?php include "../modals/logoutModal.php"; ?>
-
-<!-- Bootstrap core JavaScript-->
-<script src="/almacen/fe/vendor/jquery/jquery.min.js"></script>
-<script src="/almacen/fe/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-<!-- Core plugin JavaScript-->
-<script src="/almacen/fe/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-<!-- Custom scripts for all pages-->
-<script src="/almacen/fe/js/sb-admin-2.min.js"></script>
-
-<!-- Page level plugins -->
-<script src="/almacen/fe/vendor/datatables/jquery.dataTables.min.js"></script>
-<script src="/almacen/fe/vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-<script src="/almacen/fe/js/custom.js"></script>
-
-<!-- Page level custom scripts -->
-<script src="/almacen/fe/js/logs/logs.js"></script>
+<script src="//<?= $bs ?>grenyaobrador.es/almacen/fe/vendor/jquery/jquery.min.js"></script>
+<script src="//<?= $bs ?>grenyaobrador.es/almacen/fe/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="//<?= $bs ?>grenyaobrador.es/almacen/fe/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="//<?= $bs ?>grenyaobrador.es/almacen/fe/js/sb-admin-2.min.js"></script>
+<script src="//<?= $bs ?>grenyaobrador.es/almacen/fe/vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="//<?= $bs ?>grenyaobrador.es/almacen/fe/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<script src="//<?= $bs ?>grenyaobrador.es/almacen/fe/js/custom.js"></script>
+<script src="//<?= $bs ?>grenyaobrador.es/almacen/fe/js/logs/logs.js"></script>
 
 <script type="application/javascript">
 	const userId = <?php echo $_SESSION['userid'] ?>;
