@@ -95,8 +95,7 @@ const dataTableDashboard = $('#dataTableDashboard').DataTable({
 		{"width": "10%", orderable: false, targets: [3]},
 		{"width": "10%", orderable: false, targets: [4]},
 		{"width": "10%", orderable: false, targets: [5]},
-		{"width": "10%", orderable: false, targets: [6]},
-		{"width": "20%", orderable: false, targets: [7]},
+		{"width": "20%", orderable: false, targets: [6]},
 	],
 	aaSorting: [],
 	responsive: true,
@@ -211,9 +210,9 @@ function renderTableDashboard(dataTable, data, isFromSearch = false) {
 		const note = null === o["note"] ? "" : o["note"];
 		const deposit0 = null === o["deposit0"] ? "" : o["deposit0"];
 		const deposit1 = null === o["deposit1"] ? "" : o["deposit1"];
-		const outflow0 = null === o["outflow0"] ? "" : o["outflow0"];
+		// const outflow0 = null === o["outflow0"] ? "" : o["outflow0"];
 		// const outflow1 = null === o["outflow1"] ? "" : o["outflow1"];
-		const left = calcFlow(deposit0, deposit1, outflow0);
+		const left = calcFlow(deposit0, deposit1);
 		const lastOperation = null === o["lastOperation"] ? "" : o["lastOperation"];
 		dataTable.row.add([
 			name,
@@ -221,7 +220,7 @@ function renderTableDashboard(dataTable, data, isFromSearch = false) {
 			note,
 			'<input onchange="updateProduct(' + id + ', 0)" type="number" min="0" value="' + deposit0 + '" class="form-control" id="deposit0-' + id + '">',
 			'<input onchange="updateProduct(' + id + ', 1)" type="number" min="0" value="' + deposit1 + '" class="form-control" id="deposit1-' + id + '">',
-			'<input onchange="updateProduct(' + id + ', 2)" type="number" min="0" value="' + outflow0 + '" class="form-control" id="outflow0-' + id + '">',
+			// '<input onchange="updateProduct(' + id + ', 2)" type="number" min="0" value="' + outflow0 + '" class="form-control" id="outflow0-' + id + '">',
 			'<input disabled type="number" value="' + left + '" class="form-control" id="left-' + id + '">',
 			'<div id="lastOperation-' + id + '">' + lastOperation + '</div>',
 		]);
@@ -233,12 +232,13 @@ function renderTableDashboard(dataTable, data, isFromSearch = false) {
 function updateProduct(id, operation) {
 	let deposit0 = document.getElementById("deposit0-" + id).value;
 	let deposit1 = document.getElementById("deposit1-" + id).value;
-	let outflow0 = document.getElementById("outflow0-" + id).value;
+	// let outflow0 = document.getElementById("outflow0-" + id).value;
 	deposit0 = deposit0 === "" ? 0 : deposit0;
 	deposit1 = deposit1 === "" ? 0 : deposit1;
-	outflow0 = outflow0 === "" ? 0 : outflow0;
+	// outflow0 = outflow0 === "" ? 0 : outflow0;
+	const outflow0 = 0;
 	const outflow1 = 0;
-	const left = calcFlow(deposit0, deposit1, outflow0);
+	const left = calcFlow(deposit0, deposit1);
 	document.getElementById("left-" + id).value = left;
 	let num;
 	switch (operation) {
@@ -287,8 +287,8 @@ $("#btn-new-page-confirm").on("click", function () {
 	});
 });
 
-function calcFlow(deposit0, deposit1, outflow0) {
-	let left = Number(deposit0) + Number(deposit1) - Number(outflow0);
+function calcFlow(deposit0, deposit1) {
+	let left = Number(deposit0) + Number(deposit1);
 	if (left < 0) {
 		left = 0;
 	}

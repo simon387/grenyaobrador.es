@@ -40,7 +40,6 @@
 						<th scope="row" class="col" data-field="note">Note</th>
 						<th scope="row" class="col" data-field="deposit0">Almacen</th>
 						<th scope="row" class="col" data-field="deposit1">Tienda</th>
-						<th scope="row" class="col" data-field="outFlow0">Salida Tienda</th>
 						<th scope="row" class="col" data-field="left">Cuanto Quedan</th>
 						<th scope="row" class="col" data-field="lastOperation">Última Edición</th>
 					</tr>
