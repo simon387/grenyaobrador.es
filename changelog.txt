@@ -1,1 +1,6 @@
+Version 1.0.1
+- update readme
+- fix logout
+- added about page
+
 Version 1.0.0 alpha

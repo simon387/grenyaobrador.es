@@ -14,11 +14,11 @@
 						<a class="nav-link" href="<?= INDEX ?>">Home <span class="sr-only">(current)</span></a>
 					</li>
 					<li class="nav-item">
+						<a class="nav-link" href="about.php">About</a>
+					</li>
+					<li class="nav-item">
 						<a class="nav-link" target="_blank" href="almacen/fe/index.php">Almacen</a>
 					</li>
-					<!--						<li class="nav-item">-->
-					<!--							<a class="nav-link" href="about.html">About</a>-->
-					<!--						</li>-->
 					<!--						<li class="nav-item">-->
 					<!--							<a class="nav-link" href="book.html">Book Table</a>-->
 					<!--						</li>-->
