@@ -82,7 +82,7 @@ function search() {
 }
 
 const dataTableDashboard = $('#dataTableDashboard').DataTable({
-	paging: true, //ASK MARIO
+	paging: true,
 	language: {
 		url: contextPath + "/vendor/datatables/es.json",
 	},
@@ -201,26 +201,27 @@ function getDatatableDataBySupplierAndPeriod(supplierID, periodID) {
 function renderTableDashboard(dataTable, data, isFromSearch = false) {
 	dataTable.clear();
 	const array = isFromSearch ? data.list : JSON.parse(data).list;
-	const disabledDeposit = user["role"] === "admin" || user["role"] === "super-admin" ? "" : "disabled";
-	const disabledOf0 = user["role"] === "comarea" ? "disabled" : "";
-	const disabledOf1 = user["role"] === "placa" ? "disabled" : "";
+	// const disabledDeposit = user["role"] === "admin" || user["role"] === "super-admin" ? "" : "disabled";
+	// const disabledOf0 = user["role"] === "comarea" ? "disabled" : "";
+	// const disabledOf1 = user["role"] === "placa" ? "disabled" : "";
 	$.each(array, function (ind, o) {
 		const id = o["id"];
-		const name = isFromSearch ? o["supplier"].toUpperCase() + " - <strong>" + o["name"] + "</strong>" : o["name"];
+		const name = isFromSearch ? o["supplier"].toUpperCase() + " - <strong>" + o["name"] + "</strong>" : "<strong>" + o["name"] + "</strong>";
 		const unit = null === o["unit"] ? "" : o["unit"];
 		const note = null === o["note"] ? "" : o["note"];
-		const deposit = null === o["deposit"] ? "" : o["deposit"];
+		const deposit0 = null === o["deposit0"] ? "" : o["deposit0"];
+		const deposit1 = null === o["deposit1"] ? "" : o["deposit1"];
 		const outflow0 = null === o["outflow0"] ? "" : o["outflow0"];
-		const outflow1 = null === o["outflow1"] ? "" : o["outflow1"];
-		const left = calcFlow(deposit, outflow0, outflow1);
+		// const outflow1 = null === o["outflow1"] ? "" : o["outflow1"];
+		const left = calcFlow(deposit0, deposit1, outflow0);
 		const lastOperation = null === o["lastOperation"] ? "" : o["lastOperation"];
 		dataTable.row.add([
 			name,
 			unit,
 			note,
-			'<input ' + disabledDeposit + ' onchange="updateProduct(' + id + ', 0)" type="number" min="0" value="' + deposit + '" class="form-control" id="deposit-' + id + '">',
-			'<input ' + disabledOf0 + ' onchange="updateProduct(' + id + ', 1)" type="number" min="0" value="' + outflow0 + '" class="form-control" id="outflow0-' + id + '">',
-			'<input ' + disabledOf1 + ' onchange="updateProduct(' + id + ', 2)" type="number" min="0" value="' + outflow1 + '" class="form-control" id="outflow1-' + id + '">',
+			'<input onchange="updateProduct(' + id + ', 0)" type="number" min="0" value="' + deposit0 + '" class="form-control" id="deposit0-' + id + '">',
+			'<input onchange="updateProduct(' + id + ', 1)" type="number" min="0" value="' + deposit1 + '" class="form-control" id="deposit1-' + id + '">',
+			'<input onchange="updateProduct(' + id + ', 2)" type="number" min="0" value="' + outflow0 + '" class="form-control" id="outflow0-' + id + '">',
 			'<input disabled type="number" value="' + left + '" class="form-control" id="left-' + id + '">',
 			'<div id="lastOperation-' + id + '">' + lastOperation + '</div>',
 		]);
@@ -230,27 +231,28 @@ function renderTableDashboard(dataTable, data, isFromSearch = false) {
 }
 
 function updateProduct(id, operation) {
-	let deposit = document.getElementById("deposit-" + id).value;
+	let deposit0 = document.getElementById("deposit0-" + id).value;
+	let deposit1 = document.getElementById("deposit1-" + id).value;
 	let outflow0 = document.getElementById("outflow0-" + id).value;
-	let outflow1 = document.getElementById("outflow1-" + id).value;
-	deposit = deposit === "" ? 0 : deposit;
+	deposit0 = deposit0 === "" ? 0 : deposit0;
+	deposit1 = deposit1 === "" ? 0 : deposit1;
 	outflow0 = outflow0 === "" ? 0 : outflow0;
-	outflow1 = outflow1 === "" ? 0 : outflow1;
-	const left = calcFlow(deposit, outflow0, outflow1);
+	const outflow1 = 0;
+	const left = calcFlow(deposit0, deposit1, outflow0);
 	document.getElementById("left-" + id).value = left;
 	let num;
 	switch (operation) {
 		case 0:
-			operation = "<em>Entrada</em>";
-			num = deposit;
+			operation = "<em>Almacen</em>";
+			num = deposit0;
 			break;
 		case 1:
-			operation = "<em>Salida Plaça</em>";
-			num = outflow0;
+			operation = "<em>Tienda</em>";
+			num = deposit1;
 			break;
 		case 2:
-			operation = "<em>Salida Comarea</em>";
-			num = outflow1;
+			operation = "<em>Salida Tienda</em>";
+			num = outflow0;
 			break;
 	}
 	const lastOperation = getCurrentFormattedTimestamp() + " - <strong>" + username + "</strong> ha puesto " + operation + " a " + num;
@@ -262,7 +264,8 @@ function updateProduct(id, operation) {
 		dataType: "json",
 		data: JSON.stringify({
 			id,
-			deposit,
+			deposit0,
+			deposit1,
 			outflow0,
 			outflow1,
 			left,
@@ -284,8 +287,8 @@ $("#btn-new-page-confirm").on("click", function () {
 	});
 });
 
-function calcFlow(deposit, outflow0, outflow1) {
-	let left = deposit - outflow0 - outflow1;
+function calcFlow(deposit0, deposit1, outflow0) {
+	let left = Number(deposit0) + Number(deposit1) - Number(outflow0);
 	if (left < 0) {
 		left = 0;
 	}

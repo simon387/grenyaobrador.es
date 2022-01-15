@@ -1,9 +1,7 @@
 <div class="container-fluid">
 
 	<div class="d-sm-flex align-items-center justify-content-between mb-4">
-		<h1 class="h3 mb-0 text-gray-800">
-			Almacén
-		</h1>
+		<h1 class="h3 mb-0 text-gray-800">Almacén</h1>
 		<div>
 			<button class="btn btn-info btn-icon-split btn-sm" id="btn-prev-page">
 				<span class="icon text-white-50">
@@ -40,9 +38,9 @@
 						<th scope="row" class="col" data-field="name">Producto</th>
 						<th scope="row" class="col" data-field="unit">Unidad</th>
 						<th scope="row" class="col" data-field="note">Note</th>
-						<th scope="row" class="col" data-field="deposit">Entrada</th>
-						<th scope="row" class="col" data-field="outFlow0">Salida Plaça</th>
-						<th scope="row" class="col" data-field="outFlow1">Salida Comarea</th>
+						<th scope="row" class="col" data-field="deposit0">Almacen</th>
+						<th scope="row" class="col" data-field="deposit1">Tienda</th>
+						<th scope="row" class="col" data-field="outFlow0">Salida Tienda</th>
 						<th scope="row" class="col" data-field="left">Cuanto Quedan</th>
 						<th scope="row" class="col" data-field="lastOperation">Última Edición</th>
 					</tr>

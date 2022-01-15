@@ -20,7 +20,7 @@ class Config
 }
 ```
 ### Database's diagram
-![image info](./almacen.png)
+![image info](./grenyaobrador.png)
 ### Local
 + host: localhost
 + name: grenyaobrador

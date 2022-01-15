@@ -18,7 +18,8 @@ $product = new Product($db);
 $data = json_decode(file_get_contents("php://input"));
 
 $product->id = $data->id;
-$product->deposit = $data->deposit;
+$product->deposit0 = $data->deposit0;
+$product->deposit1 = $data->deposit1;
 $product->outflow0 = $data->outflow0;
 $product->outflow1 = $data->outflow1;
 $product->left = $data->left;
