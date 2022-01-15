@@ -1,6 +1,7 @@
-const contextPath = window.location.hostname === 'www.grenyaobrador.es' ? "www.grenyaobrador.es/almacen/fe" : "/grenyaobrador.es/almacen/fe";
+//const contextPath = window.location.hostname === 'www.grenyaobrador.es' ? "www.grenyaobrador.es/almacen/fe" : "/grenyaobrador.es/almacen/fe";
 const pre = window.location.hostname === 'www.grenyaobrador.es' ? "" : "//localhost://grenyaobrador.es";
 const rest = pre + "/almacen/rest/";
+const contextPath = rest.replace("rest/", "") + "fe";
 
 $(document).ready(function () {
 	$("#sidebarToggleTop-custom").on("click", function () {
