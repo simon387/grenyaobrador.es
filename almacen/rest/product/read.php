@@ -24,7 +24,8 @@ if ($num > 0) {
 			"name" => $name,
 			"supplier" => $supplier,
 			"unit" => $unit,
-			"deposit" => $deposit,
+			"deposit0" => $deposit0,
+			"deposit1" => $deposit1,
 			"outflow0" => $outflow0,
 			"outflow1" => $outflow1,
 			"left" => $left,
@@ -33,7 +34,7 @@ if ($num > 0) {
 			"lastOperation" => $lastOperation,
 		);
 
-		array_push($product_arr["list"], $product_item);
+		$product_arr["list"][] = $product_item;
 	}
 
 	http_response_code(200);

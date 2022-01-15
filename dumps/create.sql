@@ -87,7 +87,6 @@ create table product
     name     varchar(255)  not null,
     supplier int           not null,
     unit     varchar(255)  null,
-    deposit  decimal(9, 2) null,-- TODO remove
     deposit0 decimal(9, 2) null,
     deposit1 decimal(9, 2) null,
     outflow0 decimal(9, 2) null,

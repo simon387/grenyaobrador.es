@@ -12,7 +12,8 @@ class Product
 	public $name;
 	public $supplier;
 	public $unit;
-	public $deposit;
+	public $deposit0;
+	public $deposit1;
 	public $outflow0;
 	public $outflow1;
 	public $left;
@@ -26,7 +27,7 @@ class Product
 
 	function getBySupplierAndPeriod($supplierID, $periodID)
 	{
-		$query = "SELECT p.id, p.category, p.name, p.supplier, p.unit, p.deposit, p.outflow0, " .
+		$query = "SELECT p.id, p.category, p.name, p.supplier, p.unit, p.deposit0, p.deposit1, p.outflow0, " .
 			"p.outflow1, p.left, p.period, p.note, (select description from operation o where o.product = p.id order by " .
 			"timestamp desc limit 1) as 'lastOperation' FROM " . $this->table_name . " p WHERE " .
 			"p.supplier = " . $supplierID . " AND p.period = " . $periodID;
@@ -40,7 +41,8 @@ class Product
 	{
 		$query = "UPDATE " . $this->table_name . "
             SET
-                deposit = :deposit,
+                deposit0 = :deposit0,
+                deposit1 = :deposit1,
                 outflow0 = :outflow0,
                 outflow1 = :outflow1,
                 `left` = :left
@@ -50,13 +52,15 @@ class Product
 		$stmt = $this->conn->prepare($query);
 
 		$this->id = htmlspecialchars(strip_tags($this->id));
-		$this->deposit = htmlspecialchars(strip_tags($this->deposit));
+		$this->deposit0 = htmlspecialchars(strip_tags($this->deposit0));
+		$this->deposit1 = htmlspecialchars(strip_tags($this->deposit1));
 		$this->outflow0 = htmlspecialchars(strip_tags($this->outflow0));
 		$this->outflow1 = htmlspecialchars(strip_tags($this->outflow1));
 		$this->left = htmlspecialchars(strip_tags($this->left));
 
 		$stmt->bindParam(":id", $this->id);
-		$stmt->bindParam(":deposit", $this->deposit);
+		$stmt->bindParam(":deposit0", $this->deposit0);
+		$stmt->bindParam(":deposit1", $this->deposit1);
 		$stmt->bindParam(":outflow0", $this->outflow0);
 		$stmt->bindParam(":outflow1", $this->outflow1);
 		$stmt->bindParam(":left", $this->left);
@@ -78,7 +82,7 @@ class Product
 
 	function search($query_, $period_)
 	{
-		$query = "select p.id, p.category, p.name, s.name as supplier, p.unit, p.deposit, p.outflow0, p.outflow1, p.`left`, p.note" .
+		$query = "select p.id, p.category, p.name, s.name as supplier, p.unit, p.deposit0, p.deposit1, p.outflow0, p.outflow1, p.`left`, p.note" .
 			",(select description from operation o where o.product = p.id order by timestamp desc limit 1) as 'lastOperation' " .
 			"from " . $this->table_name . " p, supplier s where p.supplier = s.id and p.period = " . $period_ .
 			" and p.name like '%" . $query_ .  "%'";
