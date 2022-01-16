@@ -1,14 +1,14 @@
-//const contextPath = window.location.hostname === 'www.grenyaobrador.es' ? "www.grenyaobrador.es/almacen/fe" : "/grenyaobrador.es/almacen/fe";
 const pre = window.location.hostname === "localhost" ? "//localhost://grenyaobrador.es" : "";
 const rest = pre + "/almacen/rest/";
 const contextPath = rest.replace("rest/", "") + "fe";
 
 $(document).ready(function () {
 	$("#sidebarToggleTop-custom").on("click", function () {
-		if ("flex" === $("#accordionSidebar").css("display")) {
-			$("#accordionSidebar").css("display", "none");
+		const accordion = $("#accordionSidebar");
+		if ("flex" === accordion.css("display")) {
+			accordion.css("display", "none");
 		} else {
-			$("#accordionSidebar").css("display", "flex");
+			accordion.css("display", "flex");
 		}
 	});
 });
