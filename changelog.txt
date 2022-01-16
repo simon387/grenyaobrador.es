@@ -1,3 +1,7 @@
+Version 1.0.4
+- fix html
+- added pages
+
 Version 1.0.3
 - fix bug hostname
 

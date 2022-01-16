@@ -2,22 +2,14 @@
 	<div id="customCarousel1" class="carousel slide" data-ride="carousel">
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<div class="container ">
+				<div class="container">
 					<div class="row">
 						<div class="col-md-7 col-lg-6 ">
 							<div class="detail-box">
-								<h1>
-									<?= TITLE ?>
-								</h1>
-								<p>
-									Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam
-									quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil
-									ducimus libero ipsam.
-								</p>
+								<h1><?= TITLE ?></h1>
+								<p>Elaboracion y venta de productos de panaderia y pasteleria</p>
 								<div class="btn-box">
-									<a href="" class="btn1">
-										Order Now
-									</a>
+									<a href="" class="btn1">Order Now</a>
 								</div>
 							</div>
 						</div>
@@ -25,22 +17,14 @@
 				</div>
 			</div>
 			<div class="carousel-item ">
-				<div class="container ">
+				<div class="container">
 					<div class="row">
 						<div class="col-md-7 col-lg-6 ">
 							<div class="detail-box">
-								<h1>
-									<?= TITLE ?>
-								</h1>
-								<p>
-									Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam
-									quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil
-									ducimus libero ipsam.
-								</p>
+								<h1><?= TITLE ?></h1>
+								<p>Elaboracion y venta de productos de panaderia y pasteleria</p>
 								<div class="btn-box">
-									<a href="" class="btn1">
-										Order Now
-									</a>
+									<a href="" class="btn1">Order Now</a>
 								</div>
 							</div>
 						</div>
@@ -48,22 +32,14 @@
 				</div>
 			</div>
 			<div class="carousel-item">
-				<div class="container ">
+				<div class="container">
 					<div class="row">
 						<div class="col-md-7 col-lg-6 ">
 							<div class="detail-box">
-								<h1>
-									<?= TITLE ?>
-								</h1>
-								<p>
-									Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam
-									quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil
-									ducimus libero ipsam.
-								</p>
+								<h1><?= TITLE ?></h1>
+								<p>Elaboracion y venta de productos de panaderia y pasteleria</p>
 								<div class="btn-box">
-									<a href="" class="btn1">
-										Order Now
-									</a>
+									<a href="" class="btn1">Order Now</a>
 								</div>
 							</div>
 						</div>

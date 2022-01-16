@@ -1,5 +1,4 @@
 <?php
-
 $f = fopen("changelog.txt", 'r');
 $version = fgets($f);
 fclose($f);
@@ -51,8 +50,10 @@ fclose($f);
 			</div>
 			<div class="col-md-4 footer-col">
 				<h4>Opening Hours</h4>
-				<p>Everyday</p>
-				<p>10.00 Am -10.00 Pm</p>
+				<p>Lun-Ven</p>
+				<p>08.00 20.00</p>
+				<p>Sab</p>
+				<p>08.00 16.00</p>
 			</div>
 		</div>
 		<div class="footer-info">

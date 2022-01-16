@@ -17,11 +17,11 @@
 						<a class="nav-link" href="about.php">About</a>
 					</li>
 					<li class="nav-item">
+						<a class="nav-link" href="photos.php">Photos</a>
+					</li>
+					<li class="nav-item">
 						<a class="nav-link" target="_blank" href="almacen/fe/index.php">Almacen</a>
 					</li>
-					<!--						<li class="nav-item">-->
-					<!--							<a class="nav-link" href="book.html">Book Table</a>-->
-					<!--						</li>-->
 				</ul>
 				<div class="user_option">
 					<a href="" class="user_link">
