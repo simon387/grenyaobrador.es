@@ -1,4 +1,5 @@
 //const contextPath = window.location.hostname === 'www.grenyaobrador.es' ? "www.grenyaobrador.es/almacen/fe" : "/grenyaobrador.es/almacen/fe";
+debugger
 const pre = window.location.hostname === 'grenyaobrador.es' ? "" : "//localhost://grenyaobrador.es";
 const rest = pre + "/almacen/rest/";
 const contextPath = rest.replace("rest/", "") + "fe";
