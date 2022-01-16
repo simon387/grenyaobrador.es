@@ -1,7 +1,7 @@
 # grenyaobrador.es
-official site of grenyaobrador.es
+Official site of www.grenyaobrador.es
 
-## host info
+## Host info
 + hostinger
 
 ## DB
@@ -27,10 +27,11 @@ class Config
 + user: root
 + password: root
 
-## links
+## Links
 + https://hpanel.hostinger.com
 
 ## TODO
 + bug timestamp in operations
 + remember me
 + edit products
++ trad?

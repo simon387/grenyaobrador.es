@@ -1,6 +1,6 @@
 <?php include_once "util/constants.php"; ?>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <?php include "components/head.php"; ?>
 <body>
 <div class="hero_area">

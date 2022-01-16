@@ -1,6 +1,6 @@
 <?php include_once "util/constants.php"; ?>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <?php include "components/head.php"; ?>
 
 <body class="sub_page">
@@ -12,7 +12,7 @@
 </div>
 
 <section class="about_section layout_padding">
-	<div class="container  ">
+	<div class="container">
 
 		<div class="row">
 			<div class="col-md-6 ">
