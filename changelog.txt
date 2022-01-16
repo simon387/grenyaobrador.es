@@ -1,9 +1,15 @@
+Version 1.0.5
+- code optimization
+- new favicon
+- fix timestamps operations
+- implemented remember me
+
 Version 1.0.4
 - fix html
 - added pages
 
 Version 1.0.3
-- fix bug hostname
+- fix bug hostname (again)
 
 Version 1.0.2
 - fix bug hostname

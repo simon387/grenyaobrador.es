@@ -5,7 +5,7 @@
 	<meta name="keywords" content="<?= TITLE ?>, grenya"/>
 	<meta name="description" content="Grenyaobrador official site"/>
 	<meta name="author" content="<?= SC_EMAIL ?>"/>
-	<link rel="shortcut icon" href="images/favicon.png" type="">
+	<link rel="shortcut icon" href="images/favicon.ico" type="">
 	<title> <?= TITLE ?> </title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>

@@ -31,7 +31,5 @@ class Config
 + https://hpanel.hostinger.com
 
 ## TODO
-+ bug timestamp in operations
-+ remember me
 + edit products
-+ trad?
++ translation?
