@@ -37,7 +37,7 @@ function renderTableLogs(dataTable, data) {
 	const array = JSON.parse(data).list;
 	$.each(array, function (ind, o) {
 		const user = o["user"];
-		const timestamp = null === o["description"] ? "" : o["description"].substring(0, 21);
+		const timestamp = null === o["description"] ? "" : o["description"].substring(0, 19);
 		const product = null === o["product"] ? "" : undefined === o["product"] ? "" : o["product"].toUpperCase();
 		const description = null === o["description"] ? "" : o["description"].substring(22);
 		dataTable.row.add([
