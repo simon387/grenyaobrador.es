@@ -33,7 +33,7 @@ class ProductService
 
 	function modify($data): bool
 	{
-		if (empty($data->id) || empty($data->name) || empty($data->supplier) || empty($data->unit) || empty($data->note)) {
+		if (empty($data->id) || empty($data->name) || empty($data->supplier)) {
 			return false;
 		}
 
@@ -42,7 +42,7 @@ class ProductService
 
 	function create($data): bool
 	{
-		if (empty($data->name) || empty($data->supplier) || empty($data->unit) || empty($data->note)) {
+		if (empty($data->name) || empty($data->supplier)) {
 			return false;
 		}
 

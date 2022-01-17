@@ -62,7 +62,6 @@ function deletePeriod(id) {
 		}),
 		success: function () {
 			location.reload();
-			unblockScreen();
 		},
 		error: function () {
 			unblockScreen();

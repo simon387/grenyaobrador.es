@@ -52,6 +52,7 @@ function renderTableLogs(dataTable, data) {
 }
 
 function saveSupplier(id) {
+	blockScreen();
 	const name = document.getElementById("supplier-" + id).value;
 	$.ajax({
 		type: "PUT",
@@ -62,13 +63,16 @@ function saveSupplier(id) {
 			id,
 			name,
 		}),
+		success: function () {
+			unblockScreen();
+		},
 	});
 }
 
 function addNewSupplier() {
+	blockScreen();
 	const name = document.getElementById("name").value;
 	document.getElementById("name").value = "";
-	blockScreen();
 	$.ajax({
 		type: "POST",
 		url: rest + "supplier/create.php",
@@ -80,7 +84,6 @@ function addNewSupplier() {
 		}),
 		success: function () {
 			location.reload();
-			unblockScreen();
 		},
 	});
 }

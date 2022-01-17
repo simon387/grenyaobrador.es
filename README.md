@@ -31,5 +31,4 @@ class Config
 + https://hpanel.hostinger.com
 
 ## TODO
-+ edit products
 + translation?
