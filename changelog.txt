@@ -1,3 +1,7 @@
+Version 1.0.8
+- fix footer
+- fix sql script
+
 Version 1.0.7
 - fix product service
 
