@@ -1,3 +1,8 @@
+Version 1.0.10
+- added add product
+- added delete product
+- added modify product
+
 Version 1.0.9
 - fix operaciones ui bug
 

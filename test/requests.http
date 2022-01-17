@@ -79,11 +79,11 @@ PUT {{baseURL}}/controllers/product.php
 Content-Type: application/json
 
 {
-  "id": 30,
-  "name": "product name",
-  "supplier": 2,
-  "unit": "product unit",
-  "note": "note"
+  "id": 5,
+  "name": "Harina de fuerza",
+  "supplier": 3,
+  "unit": "",
+  "note": ""
 }
 
 ### get all products in the last period

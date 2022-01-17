@@ -162,11 +162,17 @@ class Product
 
 		$stmt = $this->conn->prepare($query);
 
-		$stmt->bindParam(":id", htmlspecialchars(strip_tags($id_)));
-		$stmt->bindParam(":name", htmlspecialchars(strip_tags($name_)));
-		$stmt->bindParam(":supplier", htmlspecialchars(strip_tags($supplier_)));
-		$stmt->bindParam(":unit", htmlspecialchars(strip_tags($unit_)));
-		$stmt->bindParam(":note", htmlspecialchars(strip_tags($note_)));
+		$id_ = htmlspecialchars(strip_tags($id_));
+		$name_ = htmlspecialchars(strip_tags($name_));
+		$supplier_ = htmlspecialchars(strip_tags($supplier_));
+		$unit_ = htmlspecialchars(strip_tags($unit_));
+		$note_ = htmlspecialchars(strip_tags($note_));
+
+		$stmt->bindParam(":id", $id_);
+		$stmt->bindParam(":name", $name_);
+		$stmt->bindParam(":supplier", $supplier_);
+		$stmt->bindParam(":unit", $unit_);
+		$stmt->bindParam(":note", $note_);
 
 		if ($stmt->execute()) {
 			return true;
