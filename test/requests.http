@@ -1,3 +1,7 @@
+# ######################################################################################################################
+# SUPPLIERS
+# ######################################################################################################################
+
 ### get all suppliers
 GET {{baseURL}}/supplier/readAll.php
 Accept: application/json
@@ -18,6 +22,11 @@ Content-Type: application/json
 {
   "name" : "gatto"
 }
+
+###
+# ######################################################################################################################
+# PRODUCTS
+# ######################################################################################################################
 
 ### get all products by supplier id and period id
 GET {{baseURL}}/product/read.php?supplier_id=2&period_id=1
@@ -46,6 +55,45 @@ Content-Type: application/json
   "period" : "1"
 }
 
+### delete a product
+DELETE {{baseURL}}/controllers/product.php
+Content-Type: application/json
+
+{
+  "id": 34
+}
+
+### create a new product with default category and in the last period
+POST {{baseURL}}/controllers/product.php
+Content-Type: application/json
+
+{
+  "name": "product name",
+  "supplier": 2,
+  "unit": "product unit",
+  "note": "note"
+}
+
+### modify a product
+PUT {{baseURL}}/controllers/product.php
+Content-Type: application/json
+
+{
+  "id": 30,
+  "name": "product name",
+  "supplier": 2,
+  "unit": "product unit",
+  "note": "note"
+}
+
+### get all products in the last period
+GET {{baseURL}}/controllers/product.php
+
+###
+# ######################################################################################################################
+# PERIODS
+# ######################################################################################################################
+
 ### get last period
 GET {{baseURL}}/period/readLast.php
 Accept: application/json
@@ -67,8 +115,18 @@ GET {{baseURL}}/period/readAll.php
 ### delete a period
 DELETE {{baseURL}}/period/delete.php?id=3
 
+###
+# ######################################################################################################################
+# OPERATIONS
+# ######################################################################################################################
+
 ### get all operations
 GET {{baseURL}}/operation/readAll.php
+
+###
+# ######################################################################################################################
+# USER
+# ######################################################################################################################
 
 ### get user info
 GET {{baseURL}}/user/read.php?id=1

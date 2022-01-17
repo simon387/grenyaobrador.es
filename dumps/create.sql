@@ -2,8 +2,11 @@
 drop schema grenyaobrador;
 create schema grenyaobrador;
 
+
+
+
 -- create roles
-drop table role_;
+drop table if exists role_;
 create table role_
 (
     id   int auto_increment primary key,
@@ -18,7 +21,7 @@ INSERT INTO role_ (name) VALUES ('super-admin');
 
 
 -- create user table
-drop table user_;
+drop table if exists user_;
 create table user_
 (
     id    int auto_increment primary key,
@@ -36,7 +39,7 @@ INSERT INTO user_ (email, name, pass, role) VALUES ('simone.celia@simonecelia.it
 
 
 -- create category table
-drop table category;
+drop table if exists category;
 create table category
 (
     id   int auto_increment primary key,
@@ -49,7 +52,7 @@ INSERT INTO category (name) VALUES ('sin categoría');
 
 
 -- create table period
-drop table period;
+drop table if exists period;
 create table period
 (
     id     int auto_increment primary key,
@@ -64,7 +67,7 @@ INSERT INTO period (start, end, actual) VALUES ('2022-01-13 21:43:56', null, tru
 
 
 -- supplir
-drop table supplier;
+drop table if exists supplier;
 CREATE TABLE supplier
 (
     id   int(11) auto_increment primary key,
@@ -79,7 +82,7 @@ INSERT INTO supplier (id, name) VALUES (3, 'proveedor#2');
 
 
 -- table product
-drop table product;
+drop table if exists product;
 create table product
 (
     id       int auto_increment primary key,
@@ -103,46 +106,46 @@ create table product
         foreign key (supplier) references supplier (id)
 );
 -- defaults
-INSERT INTO product (category, name, supplier, unit, deposit0, deposit, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Durum', 2, null, null, null, null, null, null, 1, null, null);
-INSERT INTO product (category, name, supplier, unit, deposit0, deposit, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Masa lenta', 2, null, null, null, null, null, null, 1, null, null);
-INSERT INTO product (category, name, supplier, unit, deposit0, deposit, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Espelta', 2, null, null, null, null, null, null, 1, null, null);
-INSERT INTO product (category, name, supplier, unit, deposit0, deposit, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Harina normal', 2, null, null, null, null, null, null, 1, null, null);
-INSERT INTO product (category, name, supplier, unit, deposit0, deposit, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Harina de fuerza', 2, null, null, null, null, null, null, 1, null, null);
-INSERT INTO product (category, name, supplier, unit, deposit0, deposit, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Malta tostada', 2, null, null, null, null, null, null, 1, null, null);
-INSERT INTO product (category, name, supplier, unit, deposit0, deposit, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Rey loco', 2, null, null, null, null, null, null, 1, null, null);
-INSERT INTO product (category, name, supplier, unit, deposit0, deposit, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Centeno integral', 2, null, null, null, null, null, null, 1, null, null);
-INSERT INTO product (category, name, supplier, unit, deposit0, deposit, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Sarraceno', 2, null, null, null, null, null, null, 1, null, null);
-INSERT INTO product (category, name, supplier, unit, deposit0, deposit, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Pasta oliva', 2, null, null, null, null, null, null, 1, null, null);
-INSERT INTO product (category, name, supplier, unit, deposit0, deposit, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Olivas', 2, null, null, null, null, null, null, 1, null, null);
-INSERT INTO product (category, name, supplier, unit, deposit0, deposit, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Avellanas', 2, null, null, null, null, null, null, 1, null, null);
-INSERT INTO product (category, name, supplier, unit, deposit0, deposit, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Nueces', 2, null, null, null, null, null, null, 1, null, null);
-INSERT INTO product (category, name, supplier, unit, deposit0, deposit, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Pasas', 2, null, null, null, null, null, null, 1, null, null);
-INSERT INTO product (category, name, supplier, unit, deposit0, deposit, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Semillas', 2, null, null, null, null, null, null, 1, null, null);
-INSERT INTO product (category, name, supplier, unit, deposit0, deposit, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Sal', 2, null, null, null, null, null, null, 1, null, null);
-INSERT INTO product (category, name, supplier, unit, deposit0, deposit, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Azucar', 2, null, null, null, null, null, null, 1, null, null);
-INSERT INTO product (category, name, supplier, unit, deposit0, deposit, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Mantequilla', 2, null, null, null, null, null, null, 1, null, null);
-INSERT INTO product (category, name, supplier, unit, deposit0, deposit, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Levadura', 2, null, null, null, null, null, null, 1, null, null);
-INSERT INTO product (category, name, supplier, unit, deposit0, deposit, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'T-80 piedra', 2, null, null, null, null, null, null, 1, null, null);
-INSERT INTO product (category, name, supplier, unit, deposit0, deposit, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Brownie', 3, null, null, null, null, null, null, 1, null, null);
-INSERT INTO product (category, name, supplier, unit, deposit0, deposit, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Tartas queso', 3, null, null, null, null, null, null, 1, null, null);
-INSERT INTO product (category, name, supplier, unit, deposit0, deposit, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Coulant', 3, null, null, null, null, null, null, 1, null, null);
-INSERT INTO product (category, name, supplier, unit, deposit0, deposit, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Muffins manzana', 3, null, null, null, null, null, null, 1, null, null);
-INSERT INTO product (category, name, supplier, unit, deposit0, deposit, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Muffins choco', 3, null, null, null, null, null, null, 1, null, null);
-INSERT INTO product (category, name, supplier, unit, deposit0, deposit, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Cookies', 3, null, null, null, null, null, null, 1, null, null);
-INSERT INTO product (category, name, supplier, unit, deposit0, deposit, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Coca llardons', 3, null, null, null, null, null, null, 1, null, null);
-INSERT INTO product (category, name, supplier, unit, deposit0, deposit, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Tarta manzana', 3, null, null, null, null, null, null, 1, null, null);
-INSERT INTO product (category, name, supplier, unit, deposit0, deposit, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Cañas crema', 3, null, null, null, null, null, null, 1, null, null);
-INSERT INTO product (category, name, supplier, unit, deposit0, deposit, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Cañas cabello', 3, null, null, null, null, null, null, 1, null, null);
-INSERT INTO product (category, name, supplier, unit, deposit0, deposit, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Croissant choco', 3, null, null, null, null, null, null, 1, null, null);
-INSERT INTO product (category, name, supplier, unit, deposit0, deposit, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Croissant mantequilla', 3, null, null, null, null, null, null, 1, null, null);
-INSERT INTO product (category, name, supplier, unit, deposit0, deposit, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Briox', 3, null, null, null, null, null, null, 1, null, null);
-INSERT INTO product (category, name, supplier, unit, deposit0, deposit, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Carrot', 3, null, null, null, null, null, null, 1, null, null);
+INSERT INTO product (category, name, supplier, unit, deposit0, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Durum', 2, null, null, null, null, null, 1, null, null);
+INSERT INTO product (category, name, supplier, unit, deposit0, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Masa lenta', 2, null, null, null, null, null, 1, null, null);
+INSERT INTO product (category, name, supplier, unit, deposit0, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Espelta', 2, null, null, null, null, null, 1, null, null);
+INSERT INTO product (category, name, supplier, unit, deposit0, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Harina normal', 2, null, null, null, null, null, 1, null, null);
+INSERT INTO product (category, name, supplier, unit, deposit0, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Harina de fuerza', 2, null, null, null, null, null, 1, null, null);
+INSERT INTO product (category, name, supplier, unit, deposit0, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Malta tostada', 2, null, null, null, null, null, 1, null, null);
+INSERT INTO product (category, name, supplier, unit, deposit0, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Rey loco', 2, null, null, null, null, null, 1, null, null);
+INSERT INTO product (category, name, supplier, unit, deposit0, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Centeno integral', 2, null, null, null, null, null, 1, null, null);
+INSERT INTO product (category, name, supplier, unit, deposit0, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Sarraceno', 2, null, null, null, null, null, 1, null, null);
+INSERT INTO product (category, name, supplier, unit, deposit0, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Pasta oliva', 2, null, null, null, null, null, 1, null, null);
+INSERT INTO product (category, name, supplier, unit, deposit0, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Olivas', 2, null, null, null, null, null, 1, null, null);
+INSERT INTO product (category, name, supplier, unit, deposit0, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Avellanas', 2, null, null, null, null, null, 1, null, null);
+INSERT INTO product (category, name, supplier, unit, deposit0, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Nueces', 2, null, null, null, null, null, 1, null, null);
+INSERT INTO product (category, name, supplier, unit, deposit0, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Pasas', 2, null, null, null, null, null, 1, null, null);
+INSERT INTO product (category, name, supplier, unit, deposit0, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Semillas', 2, null, null, null, null, null, 1, null, null);
+INSERT INTO product (category, name, supplier, unit, deposit0, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Sal', 2, null, null, null, null, null, 1, null, null);
+INSERT INTO product (category, name, supplier, unit, deposit0, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Azucar', 2, null, null, null, null, null, 1, null, null);
+INSERT INTO product (category, name, supplier, unit, deposit0, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Mantequilla', 2, null, null, null, null, null, 1, null, null);
+INSERT INTO product (category, name, supplier, unit, deposit0, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Levadura', 2, null, null, null, null, null, 1, null, null);
+INSERT INTO product (category, name, supplier, unit, deposit0, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'T-80 piedra', 2, null, null, null, null, null, 1, null, null);
+INSERT INTO product (category, name, supplier, unit, deposit0, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Brownie', 3, null, null, null, null, null, 1, null, null);
+INSERT INTO product (category, name, supplier, unit, deposit0, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Tartas queso', 3, null, null, null, null, null, 1, null, null);
+INSERT INTO product (category, name, supplier, unit, deposit0, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Coulant', 3, null, null, null, null, null, 1, null, null);
+INSERT INTO product (category, name, supplier, unit, deposit0, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Muffins manzana', 3, null, null, null, null, null, 1, null, null);
+INSERT INTO product (category, name, supplier, unit, deposit0, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Muffins choco', 3, null, null, null, null, null, 1, null, null);
+INSERT INTO product (category, name, supplier, unit, deposit0, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Cookies', 3, null, null, null, null, null, 1, null, null);
+INSERT INTO product (category, name, supplier, unit, deposit0, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Coca llardons', 3, null, null, null, null, null, 1, null, null);
+INSERT INTO product (category, name, supplier, unit, deposit0, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Tarta manzana', 3, null, null, null, null, null, 1, null, null);
+INSERT INTO product (category, name, supplier, unit, deposit0, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Cañas crema', 3, null, null, null, null, null, 1, null, null);
+INSERT INTO product (category, name, supplier, unit, deposit0, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Cañas cabello', 3, null, null, null, null, null, 1, null, null);
+INSERT INTO product (category, name, supplier, unit, deposit0, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Croissant choco', 3, null, null, null, null, null, 1, null, null);
+INSERT INTO product (category, name, supplier, unit, deposit0, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Croissant mantequilla', 3, null, null, null, null, null, 1, null, null);
+INSERT INTO product (category, name, supplier, unit, deposit0, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Briox', 3, null, null, null, null, null, 1, null, null);
+INSERT INTO product (category, name, supplier, unit, deposit0, outflow0, outflow1, `left`, period, note, deposit1) VALUES (1, 'Carrot', 3, null, null, null, null, null, 1, null, null);
 
 
 
 
 -- table operation
-drop table operation;
+drop table if exists operation;
 create table operation
 (
     id          int auto_increment primary key,

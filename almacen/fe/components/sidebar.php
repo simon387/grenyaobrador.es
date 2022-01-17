@@ -54,7 +54,7 @@ $bs = ( in_array( $_SERVER['REMOTE_ADDR'], array( '127.0.0.1', '::1' ) ) ) ? "lo
 				<h6 class="collapse-header">Personalizar:</h6>
 				<a class="collapse-item" href="//<?= $bs ?>grenyaobrador.es/almacen/fe/components/pages/periods.php">Períodos</a>
 				<a class="collapse-item" href="//<?= $bs ?>grenyaobrador.es//almacen/fe/components/pages/suppliers.php">Provedores</a>
-				<a onclick="return false;" class="collapse-item" href="//<?= $bs ?>grenyaobrador.es//almacen/fe/components/pages/products.php">Productos</a>
+				<a class="collapse-item" href="//<?= $bs ?>grenyaobrador.es//almacen/fe/components/pages/products.php">Productos</a>
 			</div>
 		</div>
 	</li>
