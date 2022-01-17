@@ -1,7 +1,7 @@
 <?php
 
-include_once '../config/Database.php';
-include_once '../models/Product.php';
+include_once '../config/database.php';
+include_once '../models/product.php';
 include_once '../config/config.php';
 
 class ProductService

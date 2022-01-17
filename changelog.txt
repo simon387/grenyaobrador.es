@@ -1,3 +1,6 @@
+Version 1.0.7
+- fix product service
+
 Version 1.0.6
 - added new product API
 - added product page
