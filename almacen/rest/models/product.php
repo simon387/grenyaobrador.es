@@ -28,16 +28,16 @@ class Product
 	function getBySupplierAndPeriod($supplierID, $periodID)
 	{
 		$query = "SELECT p.id, p.category, p.name, p.supplier, p.unit, p.deposit0, p.deposit1, p.outflow0, " .
-			"p.outflow1, p.left, p.period, p.note, (select description from operation o where o.product = p.id order by " .
-			"timestamp desc limit 1) as 'lastOperation' FROM " . $this->table_name . " p WHERE " .
-			"p.supplier = " . $supplierID . " AND p.period = " . $periodID;
+				"p.outflow1, p.left, p.period, p.note, (select description from operation o where o.product = p.id order by " .
+				"timestamp desc limit 1) as 'lastOperation' FROM " . $this->table_name . " p WHERE " .
+				"p.supplier = " . $supplierID . " AND p.period = " . $periodID;
 
 		$stmt = $this->conn->prepare($query);
 		$stmt->execute();
 		return $stmt;
 	}
 
-	function update($userId, $description)
+	function update($userId, $description): bool
 	{
 		$query = "UPDATE " . $this->table_name . "
             SET
@@ -71,7 +71,7 @@ class Product
 			$operation = new Operation($db);
 			$operation->user = $userId;
 			$operation->product = $this->id;
-			$operation->description =$description;
+			$operation->description = $description;
 			if ($operation->create()) {
 				return true;
 			}
@@ -83,11 +83,94 @@ class Product
 	function search($query_, $period_)
 	{
 		$query = "select p.id, p.category, p.name, s.name as supplier, p.unit, p.deposit0, p.deposit1, p.outflow0, p.outflow1, p.`left`, p.note" .
-			",(select description from operation o where o.product = p.id order by timestamp desc limit 1) as 'lastOperation' " .
-			"from " . $this->table_name . " p, supplier s where p.supplier = s.id and p.period = " . $period_ .
-			" and p.name like '%" . $query_ .  "%'";
+				",(select description from operation o where o.product = p.id order by timestamp desc limit 1) as 'lastOperation' " .
+				"from " . $this->table_name . " p, supplier s where p.supplier = s.id and p.period = " . $period_ .
+				" and p.name like '%" . $query_ . "%'";
 		$stmt = $this->conn->prepare($query);
 		$stmt->execute();
 		return $stmt;
+	}
+
+	function delete($id_): bool
+	{
+		$query = "delete from " . $this->table_name . " where id = :id";
+		$stmt = $this->conn->prepare($query);
+		$stmt->bindParam(":id", $id_);
+
+		return $stmt->execute();
+	}
+
+	function findAllInLastPeriod(): ?array
+	{
+		$query = "SELECT p.id, p.name, p.supplier, p.unit, p.note FROM " . $this->table_name . " p WHERE " .
+				"p.period = (select id from period where actual = true)";
+
+		$stmt = $this->conn->prepare($query);
+		$stmt->execute();
+
+		$num = $stmt->rowCount();
+
+		if ($num > 0) {
+			$product_arr = array();
+			$product_arr["list"] = array();
+
+			while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+				extract($row);
+
+				$product_item = array(
+						"id" => $id,
+						"name" => $name,
+						"supplier" => $supplier,
+						"unit" => $unit,
+						"note" => $note
+				);
+
+				$product_arr["list"][] = $product_item;
+			}
+			return $product_arr;
+		}
+		return null;
+	}
+
+	function create($name_, $supplier_, $unit_, $note_): bool
+	{
+		$query = "INSERT INTO " . $this->table_name .
+				" (category, name, supplier, unit, deposit0, deposit1, outflow0, outflow1, `left`, period, note) VALUES " .
+				"(1, :name, :supplier, :unit, 0, 0, 0, 0, 0, (select id from period where actual = true), :note)";
+		$stmt = $this->conn->prepare($query);
+		$stmt->bindParam(":name", $name_);
+		$stmt->bindParam(":supplier", $supplier_);
+		$stmt->bindParam(":unit", $unit_);
+		$stmt->bindParam(":note", $note_);
+
+		if ($stmt->execute()) {
+			return true;
+		}
+		return false;
+	}
+
+	function modify($id_, $name_, $supplier_, $unit_, $note_): bool
+	{
+		$query = "UPDATE " . $this->table_name . "
+            SET
+                name = :name,
+                supplier = :supplier,
+                unit = :unit,
+                note = :note
+            WHERE
+                id = :id";
+
+		$stmt = $this->conn->prepare($query);
+
+		$stmt->bindParam(":id", htmlspecialchars(strip_tags($id_)));
+		$stmt->bindParam(":name", htmlspecialchars(strip_tags($name_)));
+		$stmt->bindParam(":supplier", htmlspecialchars(strip_tags($supplier_)));
+		$stmt->bindParam(":unit", htmlspecialchars(strip_tags($unit_)));
+		$stmt->bindParam(":note", htmlspecialchars(strip_tags($note_)));
+
+		if ($stmt->execute()) {
+			return true;
+		}
+		return false;
 	}
 }
