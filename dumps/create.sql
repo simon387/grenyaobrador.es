@@ -33,7 +33,7 @@ create table user_
 );
 -- insert default users
 INSERT INTO user_ (email, name, pass, role) VALUES ('tati@grenyaobrador.es', 'Tatiana Correa', 'pass', 1); -- admin
-INSERT INTO user_ (email, name, pass, role) VALUES ('simone.celia@simonecelia.it', 'Simone Celia', '', 3); -- super-admin
+INSERT INTO user_ (email, name, pass, role) VALUES ('simone.celia@simonecelia.it', 'Simone Celia', '', 2); -- super-admin
 
 
 
