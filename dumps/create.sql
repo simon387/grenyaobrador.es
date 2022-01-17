@@ -1,5 +1,5 @@
 -- create database
-drop schema grenyaobrador;
+drop schema if exists grenyaobrador;
 create schema grenyaobrador;
 
 
@@ -74,7 +74,7 @@ CREATE TABLE supplier
     name varchar(255) NOT NULL
 );
 -- defaults
-INSERT INTO supplier (id, name) VALUES (1, 'sin proovedor');
+INSERT INTO supplier (id, name) VALUES (1, 'sin proveedor');
 INSERT INTO supplier (id, name) VALUES (2, 'proveedor#1');
 INSERT INTO supplier (id, name) VALUES (3, 'proveedor#2');
 
