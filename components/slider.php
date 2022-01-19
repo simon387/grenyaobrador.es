@@ -23,9 +23,7 @@
 							<div class="detail-box">
 								<h1><?= TITLE ?></h1>
 								<p>Elaboracion y venta de productos de panaderia y pasteleria</p>
-								<div class="btn-box">
-									<a href="" class="btn1">Order Now</a>
-								</div>
+								<img alt="" src="images/tati/14.jpg" width="100%">
 							</div>
 						</div>
 					</div>
@@ -38,9 +36,7 @@
 							<div class="detail-box">
 								<h1><?= TITLE ?></h1>
 								<p>Elaboracion y venta de productos de panaderia y pasteleria</p>
-								<div class="btn-box">
-									<a href="" class="btn1">Order Now</a>
-								</div>
+								<img alt="" src="images/tati/17.jpg" width="75%">
 							</div>
 						</div>
 					</div>
