@@ -28,3 +28,14 @@ function remembermeClick() {
 		localStorage.removeItem(remembermePasslKey);
 	}
 }
+
+function processForm() {
+	remembermeClick();
+}
+
+const form = document.getElementById('login-form');
+if (form.attachEvent) {
+	form.attachEvent("submit", processForm);
+} else {
+	form.addEventListener("submit", processForm);
+}

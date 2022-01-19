@@ -30,7 +30,7 @@
 								<div class="text-center">
 									<h1 class="h4 text-gray-900 mb-4">¡Bienvenido de nuevo!</h1>
 								</div>
-								<form class="user" method="POST">
+								<form class="user" method="POST" id="login-form">
 									<?php if( $_SERVER['REQUEST_METHOD'] == 'POST' ) { ?>Invalid password<?php } ?>
 									<div class="form-group">
 										<input type="email" class="form-control form-control-user" id="email" aria-describedby="emailHelp" placeholder="Enter Email Address..." name="email" required>
