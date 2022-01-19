@@ -3,13 +3,6 @@ require_once '../../../rest/config/protect.php';
 with('components/pages/login.php', "scope");
 $bs = ( in_array( $_SERVER['REMOTE_ADDR'], array( '127.0.0.1', '::1' ) ) ) ? "localhost/" : "";
 
-function error_found(){
-	session_start();
-	session_destroy();
-	$b = ( in_array( $_SERVER['REMOTE_ADDR'], array( '127.0.0.1', '::1' ) ) ) ? "localhost/" : "";
-	header("Location://" . $b . "grenyaobrador.es/almacen/fe/index.php");
-}
-set_error_handler('error_found');
 ?>
 
 <!DOCTYPE html>
