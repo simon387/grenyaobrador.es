@@ -30,6 +30,7 @@ with('components/pages/login.php', "scope");
 <script src="js/sb-admin-2.min.js"></script>
 <script src="vendor/datatables/jquery.dataTables.min.js"></script>
 <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<script src="vendor/datatables-responsive/db-resp-min.js"></script>
 <script src="js/custom.js"></script>
 <script src="js/dashboard/dashboard.js"></script>
 

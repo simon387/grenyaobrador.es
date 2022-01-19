@@ -133,6 +133,12 @@
 			</div>
 		</li>
 
+		<li class="d-none d-sm-block nav-item dropdown no-arrow mx-1">
+			<a class="nav-link" href="//<?= $bs ?>grenyaobrador.es/almacen/fe/index.php" role="button" aria-haspopup="true" aria-expanded="false">
+				<em class="fas fa-home fa-fw"></em>
+			</a>
+		</li>
+
 		<div class="topbar-divider d-none d-sm-block"></div>
 
 		<!-- Nav Item - User Information -->

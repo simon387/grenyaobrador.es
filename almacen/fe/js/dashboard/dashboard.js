@@ -98,7 +98,6 @@ const dataTableDashboard = $('#dataTableDashboard').DataTable({
 		{"width": "20%", orderable: false, targets: [6]},
 	],
 	aaSorting: [],
-	responsive: true,
 	rowReorder: {
 		selector: 'td:nth-child(2)'
 	},

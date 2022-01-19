@@ -15,7 +15,7 @@ class Operation
 		$this->conn = $db;
 	}
 
-	function create()
+	function create(): bool
 	{
 		$query = "INSERT INTO " . $this->table_name . " (user_, product, description) VALUES (:user, :product, :description)";
 		$stmt = $this->conn->prepare($query);

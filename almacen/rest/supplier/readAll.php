@@ -23,7 +23,7 @@ if ($num > 0) {
 			"name" => $name,
 		);
 
-		array_push($supplier_arr["list"], $supplier_item);
+		$supplier_arr["list"][] = $supplier_item;
 	}
 
 	http_response_code(200);

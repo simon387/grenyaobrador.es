@@ -25,7 +25,7 @@ if ($num > 0) {
 			"actual" => $actual,
 		);
 
-		array_push($period_arr["list"], $period_item);
+		$period_arr["list"][] = $period_item;
 	}
 
 	http_response_code(200);

@@ -10,12 +10,6 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 include_once '../services/ProductService.php';
 
 $method = $_SERVER['REQUEST_METHOD'];
-if ($method !== 'DELETE' && $method !== 'GET' && $method !== 'POST' && $method !== 'PUT') {
-	http_response_code(405);
-	echo json_encode(array("response" => "Method not supported"));
-	die();
-}
-
 $productService = new ProductService();
 $data = json_decode(file_get_contents("php://input"));
 
@@ -57,6 +51,10 @@ switch ($method) {
 			echo json_encode(array("response" => "Impossible to edit the Product"));
 		}
 		break;
+	default:
+		http_response_code(405);
+		echo json_encode(array("response" => "Method not supported"));
+		die();
 }
 
 
