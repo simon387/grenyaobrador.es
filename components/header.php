@@ -20,7 +20,7 @@
 						<a class="nav-link" href="photos.php">Photos</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" target="_blank" href="almacen/fe/comonents/pages/logout.php">Almacen</a>
+						<a class="nav-link" target="_blank" href="almacen/fe/components/pages/logout.php">Almacen</a>
 					</li>
 				</ul>
 				<div class="user_option">
