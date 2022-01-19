@@ -1,3 +1,9 @@
+Version 1.0.18
+- improved responsive datatable
+- improved php code
+- improved sql script
+- improved UX
+
 Version 1.0.17
 - updated slider
 - improved login remember me

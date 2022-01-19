@@ -28,7 +28,7 @@ class Supplier
 		return $stmt;
 	}
 
-	function create($name_)
+	function create($name_): bool
 	{
 		$query = "insert into " . $this->table_name . " (name) values (:name)";
 		$stmt = $this->conn->prepare($query);

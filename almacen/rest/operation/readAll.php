@@ -26,7 +26,7 @@ if ($num > 0) {
 			"description" => $description
 		);
 
-		array_push($operation_arr["list"], $operation_item);
+		$operation_arr["list"][] = $operation_item;
 	}
 
 	http_response_code(200);
