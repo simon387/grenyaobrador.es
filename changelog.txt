@@ -1,3 +1,6 @@
+Version 1.0.14
+- session bug fix attempt
+
 Version 1.0.13
 - session bug fix attempt
 
