@@ -4,9 +4,11 @@ let user;
 $(document).ready(function () {
 	getLastPeriod();
 	getSuppliers();
+	// new period
 	$("#btn-new-page").on("click", function () {
 		$('#newPeriodModal').modal('show');
 	});
+	// prev period
 	$("#btn-prev-page").on("click", function () {
 		$.ajax({
 			type: 'GET',
@@ -29,6 +31,7 @@ $(document).ready(function () {
 			},
 		});
 	});
+	// next period
 	$("#btn-next-page").on("click", function () {
 		$.ajax({
 			type: 'GET',
@@ -45,12 +48,23 @@ $(document).ready(function () {
 			},
 		});
 	});
+	// search
 	$("#input-search").on("textInput input", function () {
 		search();
 	});
 	$("#btn-search").on("click", function () {
 		search();
 	});
+	// local memory preferences
+	const ITEMS_PER_PAGE = "items_per_page";
+	const select = $('select[name="dataTableDashboard_length"]');
+	select.change(function() {
+		localStorage.setItem(ITEMS_PER_PAGE, this.value);
+	});
+	if (localStorage.getItem(ITEMS_PER_PAGE)) {
+		select.val(localStorage.getItem(ITEMS_PER_PAGE));
+		select.change();
+	}
 });
 
 function search() {
@@ -71,7 +85,6 @@ function search() {
 			renderTableDashboard(dataTableDashboard, data_, true);
 		},
 		error: function () {
-			console.clear();
 			dataTableDashboard.clear();
 			dataTableDashboard.draw();
 		},
@@ -185,7 +198,6 @@ function getDatatableDataBySupplierAndPeriod(supplierID, periodID) {
 			renderTableDashboard(dataTableDashboard, data);
 		},
 		error: function () {
-			console.clear();
 			unblockScreen();
 			dataTableDashboard.clear();
 			dataTableDashboard.draw();
@@ -199,11 +211,15 @@ function renderTableDashboard(dataTable, data, isFromSearch = false) {
 	// const disabledDeposit = user["role"] === "admin" || user["role"] === "super-admin" ? "" : "disabled";
 	// const disabledOf0 = user["role"] === "comarea" ? "disabled" : "";
 	// const disabledOf1 = user["role"] === "placa" ? "disabled" : "";
+	let unitIsAlwaysEmpty = true;
+	let noteIsAlwaysEmpty = true;
 	$.each(array, function (ind, o) {
 		const id = o["id"];
 		const name = isFromSearch ? o["supplier"].toUpperCase() + " - <strong>" + o["name"] + "</strong>" : "<strong>" + o["name"] + "</strong>";
 		const unit = null === o["unit"] ? "" : o["unit"];
+		unitIsAlwaysEmpty &= unit === "";
 		const note = null === o["note"] ? "" : o["note"];
+		noteIsAlwaysEmpty &= unit === "";
 		const deposit0 = null === o["deposit0"] ? "" : o["deposit0"];
 		const deposit1 = null === o["deposit1"] ? "" : o["deposit1"];
 		// const outflow0 = null === o["outflow0"] ? "" : o["outflow0"];
@@ -222,6 +238,8 @@ function renderTableDashboard(dataTable, data, isFromSearch = false) {
 		]);
 	});
 	dataTable.draw();
+	dataTable.column(1).visible(!unitIsAlwaysEmpty);
+	dataTable.column(2).visible(!noteIsAlwaysEmpty);
 	unblockScreen();
 }
 
