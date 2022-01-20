@@ -1,3 +1,6 @@
+Version 1.0.19
+- fix search clear
+
 Version 1.0.18
 - improved responsive datatable
 - improved php code

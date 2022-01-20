@@ -56,9 +56,6 @@ $(document).ready(function () {
 function search() {
 	document.getElementById("supplier-selected").innerHTML = "todos los proveedores";
 	const query = document.getElementById("input-search").value;
-	if ("" === query) {
-		return;
-	}
 	$.ajax({
 		type: "POST",
 		url: rest + "product/search.php",
