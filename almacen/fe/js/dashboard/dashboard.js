@@ -233,7 +233,7 @@ function renderTableDashboard(dataTable, data, isFromSearch = false) {
 			'<input onchange="updateProduct(' + id + ', 0)" type="number" min="0" value="' + deposit0 + '" class="form-control" id="deposit0-' + id + '">',
 			'<input onchange="updateProduct(' + id + ', 1)" type="number" min="0" value="' + deposit1 + '" class="form-control" id="deposit1-' + id + '">',
 			// '<input onchange="updateProduct(' + id + ', 2)" type="number" min="0" value="' + outflow0 + '" class="form-control" id="outflow0-' + id + '">',
-			'<input disabled type="number" value="' + left + '" class="form-control" id="left-' + id + '">',
+			'<input disabled type="number" value="' + left + '" class="form-control text-center" id="left-' + id + '">',
 			'<div id="lastOperation-' + id + '">' + lastOperation + '</div>',
 		]);
 	});
