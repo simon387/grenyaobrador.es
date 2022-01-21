@@ -19,12 +19,12 @@
 				<table class="table table-bordered table-striped" id="dataTableSuppliers" aria-describedby="table">
 					<thead>
 					<tr>
-						<th scope="row" class="col" data-field="Name">Nombre</th>
+						<th scope="row" class="col" data-field="id">Id</th>
+						<th scope="row" class="col" data-field="name">Nombre</th>
 					</tr>
 					</thead>
 				</table>
 			</div>
 		</div>
 	</div>
-
 </div>

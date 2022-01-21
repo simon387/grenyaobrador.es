@@ -24,7 +24,7 @@ function getDatatableData() {
 		type: "GET",
 		url: rest + "period/readAll.php",
 		success: function (data) {
-			renderTableLogs(dataTablePeriods, data);
+			renderTablePeriods(dataTablePeriods, data);
 		},
 		error: function () {
 			unblockScreen();
@@ -32,7 +32,7 @@ function getDatatableData() {
 	});
 }
 
-function renderTableLogs(dataTable, data) {
+function renderTablePeriods(dataTable, data) {
 	dataTable.clear();
 	const array = JSON.parse(data).list;
 	$.each(array, function (ind, o) {
