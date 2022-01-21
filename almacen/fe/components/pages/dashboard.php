@@ -32,7 +32,7 @@
 		</div>
 		<div class="card-body">
 			<div class="table-responsive">
-				<table class="table table-bordered responsive" id="dataTableDashboard" aria-describedby="table">
+				<table class="table table-bordered responsive table-striped" id="dataTableDashboard" aria-describedby="table">
 					<thead>
 					<tr>
 						<th data-priority="1" scope="row" class="col" data-field="name">Producto</th>
