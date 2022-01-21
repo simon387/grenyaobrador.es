@@ -24,10 +24,7 @@ class Operation
 		$stmt->bindParam(":product", $this->product);
 		$stmt->bindParam(":description", $this->description);
 
-		if ($stmt->execute()) {
-			return true;
-		}
-		return false;
+		return $stmt->execute();
 	}
 
 	//FIX ME generalize the operation table
