@@ -1,3 +1,6 @@
+Version 1.0.24
+- update table suppliers fe
+
 Version 1.0.23
 - changed table classes
 

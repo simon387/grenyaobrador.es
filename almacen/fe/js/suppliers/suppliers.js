@@ -16,7 +16,8 @@ const dataTableSuppliers = $('#dataTableSuppliers').DataTable({
 	searching: true,
 	autoWidth: false,
 	columnDefs: [
-		{"width": "100%", orderable: false, targets: [0]},
+		{"width": "10%", orderable: false, targets: [0]},
+		{"width": "90%", orderable: false, targets: [1]},
 	],
 	aaSorting: [],
 });
@@ -27,7 +28,7 @@ function getDatatableData() {
 		type: "GET",
 		url: rest + "supplier/readAll.php",
 		success: function (data) {
-			renderTableLogs(dataTableSuppliers, data);
+			renderTableSuppliers(dataTableSuppliers, data);
 		},
 		error: function () {
 			unblockScreen();
@@ -35,7 +36,7 @@ function getDatatableData() {
 	});
 }
 
-function renderTableLogs(dataTable, data) {
+function renderTableSuppliers(dataTable, data) {
 	dataTable.clear();
 	const array = JSON.parse(data).list;
 	$.each(array, function (ind, o) {
@@ -44,6 +45,7 @@ function renderTableLogs(dataTable, data) {
 		}
 		const name = null === o["name"] ? "" : o["name"];
 		dataTable.row.add([
+			o.id,
 			'<input id="supplier-' + o.id + '" class="form-control" type="text" onchange="saveSupplier(' + o.id + ')" value="' + escapeHTML(name) + '">'
 		]);
 	});
