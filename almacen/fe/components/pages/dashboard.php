@@ -1,7 +1,7 @@
 <div class="container-fluid">
 
 	<div class="d-sm-flex align-items-center justify-content-between mb-4">
-		<h1 class="h3 mb-0 text-gray-800">Almacén</h1>
+		<h1 class="h3 mb-0 text-gray-800">Almacén de Grenyaobreador.es</h1>
 		<div>
 			<button class="btn btn-info btn-icon-split btn-sm" id="btn-prev-page">
 				<span class="icon text-white-50">
