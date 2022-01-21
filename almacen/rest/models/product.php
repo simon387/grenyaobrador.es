@@ -143,10 +143,7 @@ class Product
 		$stmt->bindParam(":unit", $unit_);
 		$stmt->bindParam(":note", $note_);
 
-		if ($stmt->execute()) {
-			return true;
-		}
-		return false;
+		return $stmt->execute();
 	}
 
 	function modify($id_, $name_, $supplier_, $unit_, $note_): bool
@@ -174,9 +171,6 @@ class Product
 		$stmt->bindParam(":unit", $unit_);
 		$stmt->bindParam(":note", $note_);
 
-		if ($stmt->execute()) {
-			return true;
-		}
-		return false;
+		return $stmt->execute();
 	}
 }

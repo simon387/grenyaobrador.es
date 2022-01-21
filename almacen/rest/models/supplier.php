@@ -35,9 +35,6 @@ class Supplier
 
 		$stmt->bindParam(":name", $name_);
 
-		if ($stmt->execute()) {
-			return true;
-		}
-		return false;
+		return $stmt->execute();
 	}
 }

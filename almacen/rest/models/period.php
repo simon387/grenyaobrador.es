@@ -110,9 +110,6 @@ class Period
 		$query = "INSERT INTO product (category, name, supplier, unit, note, deposit, outflow0, outflow1, `left`, period) " .
 			"SELECT category, name, supplier, unit, note, `left`, 0, 0, `left`, " . $newId . " FROM product p WHERE p.period =" . $oldId;
 		$stmt = $this->conn->prepare($query);
-		if ($stmt->execute()) {
-			return true;
-		}
-		return false;
+		return $stmt->execute();
 	}
 }
