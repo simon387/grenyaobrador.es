@@ -10,7 +10,7 @@
 		</div>
 		<div class="card-body">
 			<div class="table-responsive overflow-hidden">
-				<table class="table table-bordered" id="dataTablePeriods" aria-describedby="table">
+				<table class="table table-bordered table-striped" id="dataTablePeriods" aria-describedby="table">
 					<thead>
 					<tr>
 						<th scope="row" class="col" data-field="start">Inicio</th>
