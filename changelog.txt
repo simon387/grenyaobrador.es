@@ -1,3 +1,6 @@
+Version 1.0.26
+- claning code
+
 Version 1.0.25
 - changed style on main table
 

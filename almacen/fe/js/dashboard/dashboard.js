@@ -208,9 +208,6 @@ function getDatatableDataBySupplierAndPeriod(supplierID, periodID) {
 function renderTableDashboard(dataTable, data, isFromSearch = false) {
 	dataTable.clear();
 	const array = isFromSearch ? data.list : JSON.parse(data).list;
-	// const disabledDeposit = user["role"] === "admin" || user["role"] === "super-admin" ? "" : "disabled";
-	// const disabledOf0 = user["role"] === "comarea" ? "disabled" : "";
-	// const disabledOf1 = user["role"] === "placa" ? "disabled" : "";
 	let unitIsAlwaysEmpty = true;
 	let noteIsAlwaysEmpty = true;
 	$.each(array, function (ind, o) {
@@ -222,8 +219,6 @@ function renderTableDashboard(dataTable, data, isFromSearch = false) {
 		noteIsAlwaysEmpty &= unit === "";
 		const deposit0 = null === o["deposit0"] ? "" : o["deposit0"];
 		const deposit1 = null === o["deposit1"] ? "" : o["deposit1"];
-		// const outflow0 = null === o["outflow0"] ? "" : o["outflow0"];
-		// const outflow1 = null === o["outflow1"] ? "" : o["outflow1"];
 		const left = calcFlow(deposit0, deposit1);
 		const lastOperation = null === o["lastOperation"] ? "" : o["lastOperation"];
 		dataTable.row.add([
@@ -246,10 +241,8 @@ function renderTableDashboard(dataTable, data, isFromSearch = false) {
 function updateProduct(id, operation) {
 	let deposit0 = document.getElementById("deposit0-" + id).value;
 	let deposit1 = document.getElementById("deposit1-" + id).value;
-	// let outflow0 = document.getElementById("outflow0-" + id).value;
 	deposit0 = deposit0 === "" ? 0 : deposit0;
 	deposit1 = deposit1 === "" ? 0 : deposit1;
-	// outflow0 = outflow0 === "" ? 0 : outflow0;
 	const outflow0 = 0;
 	const outflow1 = 0;
 	const left = calcFlow(deposit0, deposit1);
