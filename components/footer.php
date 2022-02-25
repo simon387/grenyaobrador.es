@@ -14,9 +14,9 @@ fclose($f);
 							<i class="fa fa-map-marker" aria-hidden="true"></i>
 							<span>Location</span>
 						</a>
-						<a href="">
+						<a href="tel:<?= PHONE ?>">
 							<i class="fa fa-phone" aria-hidden="true"></i>
-							<span>Call +01 1234567890</span>
+							<span>Call <?= PHONE ?></span>
 						</a>
 						<a href="mailto:<?= EMAIL ?>" target="_blank">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
@@ -35,6 +35,9 @@ fclose($f);
 						</a>
 						<a href="<?= INSTAGRAM_URL ?>" target="_blank">
 							<i class="fa fa-instagram" aria-hidden="true"></i>
+						</a>
+						<a href="tel:<?= PHONE ?>" target="_blank">
+							<i class="fa fa-phone" aria-hidden="true"></i>
 						</a>
 					</div>
 				</div>

@@ -28,6 +28,9 @@
 					<p>
 						Elaboracion y venta de productos de panaderia y pasteleria 📍<?= LOCATION ?>
 					</p>
+					<p>
+						<?= PHONE ?>
+					</p>
 					<a href="#">
 						Read More
 					</a>
