@@ -9,3 +9,4 @@ const FACEBOOK_URL = "https://www.facebook.com/forngil/";
 const INSTAGRAM_URL = "https://www.instagram.com/grenyaobrador/";
 const EMAIL = "Grenyaobrador@gmail.com";
 const LOCATION = "Plaça francesc Macia i Lluisa, 2. L'Hospitalet de llobregat";
+const PHONE = "+34 628 27 66 73";
