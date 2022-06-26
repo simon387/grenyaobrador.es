@@ -1,12 +1,17 @@
 # grenyaobrador.es
+
 Official site of www.grenyaobrador.es
 
 ## Host info
+
 + hostinger
 
 ## DB
+
 mariadb / mysql
+
 ### Example config.php
+
 ```injectablephp
 <?php
 
@@ -19,16 +24,22 @@ class Config
 	static $db_statement_0 = ''; // "SET GLOBAL time_zone='Europe/Madrid'" in PROD
 }
 ```
+
 ### Database's diagram
+
 ![image info](./grenyaobrador.png)
+
 ### Local
+
 + host: localhost
 + name: grenyaobrador
 + user: root
 + password: root
 
 ## Links
+
 + https://hpanel.hostinger.com
 
 ## TODO
+
 + translation?
