@@ -1,3 +1,6 @@
+Version 1.0.29
+- fix url link
+
 Version 1.0.28
 - updated google maps link
 
