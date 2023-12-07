@@ -1,3 +1,6 @@
+Version 1.0.30
+- update license
+
 Version 1.0.29
 - fix url link
 
